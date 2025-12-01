@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && echo jliu9206.github.io > dist/CNAME && git add dist && git commit -m 'Deploy' && git subtree push --prefix dist origin gh-pages"
+    "deploy": "npm run build && git add dist && git commit -m 'Deploy to GitHub Pages' && git subtree push --prefix dist origin gh-pages",
+    "deploy:root": "npm run build && cp -r dist/* . && git add . && git commit -m 'Deploy to root' && git push origin main"
   },
   "dependencies": {
     "react": "^18.2.0",
